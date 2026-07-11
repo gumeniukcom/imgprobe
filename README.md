@@ -3,6 +3,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/gumeniukcom/imgprobe.svg)](https://pkg.go.dev/github.com/gumeniukcom/imgprobe)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gumeniukcom/imgprobe)](https://goreportcard.com/report/github.com/gumeniukcom/imgprobe)
 [![CI](https://github.com/gumeniukcom/imgprobe/actions/workflows/ci.yml/badge.svg)](https://github.com/gumeniukcom/imgprobe/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/gumeniukcom/imgprobe/actions/workflows/codeql.yml/badge.svg)](https://github.com/gumeniukcom/imgprobe/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Pure-Go (zero cgo) image preflight for uploads: sniff the real format from magic
