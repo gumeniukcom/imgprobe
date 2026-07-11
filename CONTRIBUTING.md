@@ -20,7 +20,7 @@ process is ordinary GitHub flow.
    fix. Documentation-only changes are exempt.
 2. **The full check suite must pass**: `make all` runs formatting, lint, and
    tests; CI additionally runs the race detector, a `CGO_ENABLED=0` build, both
-   the floor and latest Go versions, and `govulncheck`.
+   the floor and latest Go versions, `govulncheck`, and CodeQL (SAST).
 3. **Style** is enforced by `gofmt` and `golangci-lint` (config in
    `.golangci.yml`) — no manual style rules beyond that. Commit messages follow
    [Conventional Commits](https://www.conventionalcommits.org) (`feat:`, `fix:`,

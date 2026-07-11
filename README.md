@@ -38,6 +38,19 @@ passes any reasonable per-side check yet is a bomb. The **total-pixel** cap
 (`WithMaxPixels`, default 50 MP) is the real guard. Both ship, with safe
 defaults.
 
+It really is header-only — measured (`make bench`, Apple M-series):
+
+```
+BenchmarkConfig                12 MP JPEG      849 ns/op     13808 B/op    4 allocs/op
+BenchmarkConfig_bombRejected   400 MP forged   401 ns/op      1416 B/op   10 allocs/op
+BenchmarkSniff                 magic bytes      49 ns/op       192 B/op    2 allocs/op
+```
+
+A `20000×20000` PNG (≈1.6 GB fully decoded) is rejected in ~400 ns using ~1.4 KB
+— the pixel buffer is never allocated. This is asserted, not just claimed:
+`TestBombRejectionReadsHeaderOnly` fails if the rejection path allocates more
+than header-sized memory.
+
 ## Why not just call `image.DecodeConfig` yourself?
 
 You can, and you should keep doing so if that is all you need. `imgprobe` adds

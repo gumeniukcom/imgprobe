@@ -21,6 +21,9 @@ testrace:
 build-nocgo:
 	CGO_ENABLED=0 go build $(GOFILES)
 
+bench:
+	go test -run xxx -bench=. -benchmem $(GOFILES)
+
 cover:
 	go test -race -coverprofile=coverage.out -covermode=atomic $(GOFILES)
 	go tool cover -func=coverage.out | tail -1
